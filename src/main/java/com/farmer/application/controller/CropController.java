@@ -1,9 +1,8 @@
 package com.farmer.application.controller;
 
+import com.farmer.application.model.CropResponse;
 import com.farmer.application.service.CropService;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Map;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -16,7 +15,7 @@ public class CropController {
     }
 
     @GetMapping("/crop")
-    public Map<String, String> getCrop(@RequestParam String location) {
+    public CropResponse getCrop(@RequestParam String location) {
         return cropService.getCropSuggestion(location);
     }
 }
